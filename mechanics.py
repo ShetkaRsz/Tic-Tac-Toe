@@ -106,13 +106,12 @@ class TicTacToe:
 
         for position_x, line in enumerate(self.field):
             for position_y, value in enumerate(line):
-                match value:
-                    case None:
-                        continue
-                    case 1:
-                        self.circle_drawing(position_x * self.size, position_y * self.size)
-                    case -1:
-                        self.cross_drawing(position_x * self.size, position_y * self.size)
+                if value is None:
+                    continue
+                elif value == 1:
+                    self.circle_drawing(position_x * self.size, position_y * self.size)
+                elif value == -1:
+                    self.cross_drawing(position_x * self.size, position_y * self.size)
         
         if answer is None:
             answer = "The game is continues"
@@ -170,11 +169,10 @@ class TicTacToe:
                 if self.field[x][y]:
                     return None
                 
-                match answer:
-                    case None:
-                        self.field[x][y] = -1
-                        self.field = minimum_maximum_algoritm(self.field)
-                        break
+                if answer is None:
+                    self.field[x][y] = -1
+                    self.field = minimum_maximum_algoritm(self.field)
+                    break
     
     def pygame_exit_function(self) -> None:
         keys = get_pressed()

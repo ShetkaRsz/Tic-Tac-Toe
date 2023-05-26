@@ -3,6 +3,9 @@
 ######################################################################
 
 
+from library_checker import download_libraries
+download_libraries()
+
 from pygame import init, display
 from pygame.time import Clock
 
