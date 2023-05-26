@@ -14,7 +14,7 @@ from pip._internal import pip
 def try_to_download(library_name: str) -> str:
     try:
         __import__(library_name)
-        return f"You already have {library_name}!"
+        return f"You have already installed {library_name}!"
     except ImportError:
         pip.main(['install', library_name])
         return f"{library_name} has been succesfully downloaded!"
