@@ -114,7 +114,7 @@ class TicTacToe:
                     self.cross_drawing(position_x * self.size, position_y * self.size)
         
         if answer is None:
-            answer = "The game is continues"
+            answer = "The game continues"
         elif answer == 0:
             answer = "Draw"
         elif answer == 1:
